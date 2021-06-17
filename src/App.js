@@ -2,10 +2,11 @@ import { useQuery } from "react-query";
 import "./App.css";
 
 const fetchUsers = async () => {
-  const response = await fetch("https://reqres.in/user/api");
+  const response = await fetch("https://reqres.in/api/users");
   if (!response.ok) {
     throw new Error("Oh no! Something went wrong.....");
   }
+  return response.json();
 };
 
 function App() {
